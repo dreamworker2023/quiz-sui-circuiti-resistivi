@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Circuiti Resistivi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Contenitore di benvenuto -->
+    <div class="welcome-container">
+        <h2>Benvenuto al Quiz Circuiti Resistivi</h2>
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+        </div>
+        <div>
+            <label for="cognome">Cognome:</label>
+            <input type="text" id="cognome" required>
+        </div>
+        <div>
+            <label for="gruppo">Classe:</label>
+            <input type="text" id="gruppo" required>
+        </div>
+        <button id="welcome-btn">Inizia il Quiz</button>
+    </div>
+
+    <!-- Contenitore del quiz, nascosto inizialmente -->
+    <div class="quiz-container" style="display: none;">
+        <h1>RETI RESISTIVE</h1>
+        <div class="quiz-board">
+            <!-- Zona sinistra: Immagine e Tabella -->
+            <div class="left-zone">
+                <img id="circuitImage" src="" alt="Immagine del Circuito" class="resistance-image">
+                <table id="resistanceTable">
+                    <thead>
+                        <tr>
+                            <th>Nome Resistenza</th>
+                            <th>Valore</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Le resistenze verranno inserite dinamicamente qui -->
+                    </tbody>
+                </table>
+                <div id="voltageDisplay" style="margin-top: 10px; font-size: 1.2em;"></div>
+            </div>
+
+            <!-- Zona destra: Domande -->
+            <div class="right-zone">
+                <div class="progress-bar" id="progressBar"></div>
+                <div id="quiz"></div>
+                <button id="submit" style="display:none;">Invia Risposta</button>
+                <button id="next" style="display:none;">Vai Avanti</button>
+                <div id="results"></div>
+                <div id="timerDisplay">Tempo rimanente: 30s</div>
+                
+            </div>
+        </div>
+        <!-- Feedback Overlay -->
+<div id="feedback-overlay" class="overlay" style="display: none;">
+    <div id="feedback-message"></div>
+</div>
+
+    </div>
+    <div class="final-results" style="display: none;">
+        <h2>Risultati Finali</h2>
+        <p id="totalTime"></p>
+        <p id="correctAnswers"></p>
+        <p id="feedbackMessage"></p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
